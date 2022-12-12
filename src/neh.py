@@ -121,9 +121,9 @@ def neh(jobs, machines: int):
         shift_job_to_left(solution, i)
         i += 1
     end_time = time.time()
+    elapsed_time = end_time - start_time
     
     logging.info(f"NEH Makespan with Taillard acceleration = {solution.makespan:2f}")
-    logging.info(f"NEH Makespan with traditional method = {solution.calculate_makespan():2f}")
-    logging.info(f"Elapsed time = {end_time - start_time:2f} sec")
+    logging.info(f"Elapsed time = {elapsed_time:2f} sec")
     
-    return solution
+    return solution, elapsed_time 
