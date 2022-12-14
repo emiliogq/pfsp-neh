@@ -13,7 +13,7 @@ def read_instance_file(filename: str):
         jobs = []
         for job_times in job_times_line:
             job_processing_times = [ float(time) for time in job_times.split("\t")]
-            job = Job(i, job_processing_times)
+            job = Job(i+1, job_processing_times)
             jobs.append(job)
             i += 1
     return jobs, num_machines
