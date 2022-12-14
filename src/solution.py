@@ -40,3 +40,12 @@ class Solution:
         for i in range(from_position, to_position, -1):
             self.jobs[i] = self.jobs[i-1]
         self.jobs[to_position] = current_job
+
+    def __str__(self) -> str:
+        permutation = "("
+        job: Job
+        for job in self.jobs:
+            permutation += str(job.id) + " "
+        permutation = permutation.strip()
+        permutation += ")"
+        return permutation
